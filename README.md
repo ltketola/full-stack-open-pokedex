@@ -1,8 +1,6 @@
 # Full Stack open CI/CD
 
-This repository is used for the CI/CD module of the Full stack open course
-
-Fork the repository to complete course exercises
+This repository is used for the CI/CD module (part11) of the Helsinki OpenUni Full Stack Open 2020 MOOC-course. The main repository for the course is [fullstackopen](https://github.com/ltketola/fullstackopen).
 
 ## Commands
 
