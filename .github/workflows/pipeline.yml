@@ -13,6 +13,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - uses: akhileshns/heroku-deploy@3.8.9
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "fullstackopen-pokedex-demo"
+          heroku_email: "ltketola@gmail.com"
       - name: npm install
         run: npm install
       - name: lint
