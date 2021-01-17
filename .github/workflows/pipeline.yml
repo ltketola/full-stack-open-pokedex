@@ -44,8 +44,12 @@ jobs:
     steps:      
       - uses: actions/checkout@v2
       - name: Bump version and push tag
-        if: ${{ github.event_name == 'push' }} 
+        if: ${{ github.event_name == 'push' }}
         uses: anothrNick/github-tag-action@1.33.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
+      - name: Test
+        env:
+          COMMIT_MESSAGES: ${{ toJSON(github.event.commits.*.message) }}
+        run: echo "$COMMIT_MESSAGES"
