@@ -50,4 +50,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
       - name: Test
-        run: join(${{ toJSON(github.event.commits.*.message) }})
+        run: ${{ toJSON(github.event.commits.*.message) }}
