@@ -50,4 +50,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
       - name: Test
-        run: ${{ toJSON(github.event.commits.*.message) }}
+        if: contains(${{ toJSON(github.event.commits.*.message) }}, '#hello')
+        run: echo "Hello World!"
