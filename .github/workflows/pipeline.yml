@@ -50,4 +50,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
       - name: Test
-        run: echo ${{ contains( toJSON(github.event.commits.*.message), '#skip') }}
+        run: echo ${{ contains(join(toJSON(github.event.commits.*.message)), '#skip') }}
