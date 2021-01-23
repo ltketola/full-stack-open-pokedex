@@ -43,9 +43,18 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: custom
-          custom_payload: |
+          fields: commit,took
+          custom_payload:  
           {
-            "text": "Custom payload"             
+	          "blocks": [
+		          {
+			          "type": "section",
+			            "text": {
+				            "type": "mrkdwn",
+				            "text": "Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\n\n *Please select a restaurant:*"
+			          }
+		          }
+	          ]
           }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
