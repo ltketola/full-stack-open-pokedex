@@ -47,6 +47,7 @@ jobs:
           custom_payload: |
             {
               username: 'github_action',
+              icon_emoji: ':mittens_bernie:'
               attachments: [{
                 color: 'good',
                 text: `A new version deployed to https://fullstackopen-pokedex-demo.herokuapp.com (${process.env.AS_COMMIT}). The build took ${process.env.AS_TOOK}.`,
