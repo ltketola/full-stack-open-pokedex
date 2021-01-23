@@ -44,7 +44,7 @@ jobs:
         env:
           SLACK_USERNAME: kalle
           SLACK_MESSAGE: 'Testi'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         if: success()
       - name: Failure notification to Slack
         uses: 8398a7/action-slack@v3
