@@ -39,7 +39,7 @@ jobs:
           healthcheck: "https://fullstackopen-pokedex-demo.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
-      - name: Success notifications to Slack
+      - name: Successful deployment notification to Slack
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
@@ -47,7 +47,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: ${{ github.event_name == 'push' && success() }}
-      - name: Failure notifications to Slack
+      - name: Failure notification to Slack
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
