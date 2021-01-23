@@ -44,13 +44,6 @@ jobs:
         with:
           status: custom
           fields: commit,took
-          custom_payload: {
-              username: 'github_action',
-              attachments: [{
-                color: 'good',
-                text: 'Test'
-              }]              
-          }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: ${{ github.event_name == 'push' && job.status == 'success' }}
