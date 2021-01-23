@@ -46,15 +46,7 @@ jobs:
           fields: commit,took
           custom_payload: 
           {
-	          "blocks": [
-		          {
-			          "type": "section",
-			            "text": {
-				            "type": "mrkdwn",
-				            "text": "Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\n\n *Please select a restaurant:*"
-			          }
-		          }
-	          ]
+            "text": `A new version deployed to https://fullstackopen-pokedex-demo.herokuapp.com (${process.env.AS_COMMIT}). The build took ${process.env.AS_TOOK}.`                
           }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
