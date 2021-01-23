@@ -44,9 +44,9 @@ jobs:
         with:
           status: custom
           fields: commit,took
-          custom_payload: 
+          custom_payload: |
           {
-                            
+            text: "Custom payload"             
           }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
