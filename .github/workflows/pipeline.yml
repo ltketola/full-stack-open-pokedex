@@ -46,7 +46,7 @@ jobs:
           fields: repo,message,commit,job,took,eventName
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: failure()
+        if: always()
   versioning_and_tagging:
     runs-on: ubuntu-18.04    
     steps:      
