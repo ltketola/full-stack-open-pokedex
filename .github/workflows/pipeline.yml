@@ -39,13 +39,6 @@ jobs:
           healthcheck: "https://fullstackopen-pokedex-demo.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
-      - name: Successful deployment notification to Slack
-        uses: rtCamp/action-slack-notify@v2.1.2
-        env:
-          SLACK_USERNAME: kalle
-          SLACK_MESSAGE: 'Testi'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        if: success()
       - name: Failure notification to Slack
         uses: 8398a7/action-slack@v3
         with:
