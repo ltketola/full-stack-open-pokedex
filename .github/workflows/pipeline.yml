@@ -44,12 +44,11 @@ jobs:
         with:
           status: custom
           fields: commit,took
-          custom_payload: |
-            {
-              attachments: [
-                text: `A new version deployed to https://fullstackopen-pokedex-demo.herokuapp.com (${process.env.AS_COMMIT}). The build took ${process.env.AS_TOOK}.`
-              ]
-            }
+          custom_payload: {
+            attachments: [{
+              text: `A new version deployed to https://fullstackopen-pokedex-demo.herokuapp.com (${process.env.AS_COMMIT}). The build took ${process.env.AS_TOOK}.`
+            }]
+          }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: ${{ github.event_name == 'push' && job.status == 'success' }}
