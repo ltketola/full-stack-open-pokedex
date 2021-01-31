@@ -8,6 +8,9 @@ jobs:
   periodic_health_check:    
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: dev
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@v1.2
         with:
