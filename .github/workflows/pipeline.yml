@@ -36,9 +36,6 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: "fullstackopen-pokedex-demo"
           heroku_email: "ltketola@gmail.com"
-          healthcheck: "https://fullstackopen-pokedex-demo.herokuapp.com/health"
-          checkstring: "ok"
-          rollbackonhealthcheckfailed: true
       - name: Successful deployment notification to Slack
         uses: 8398a7/action-slack@v3
         with:
