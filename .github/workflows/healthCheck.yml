@@ -1,8 +1,6 @@
 name: Periodic health check
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   
 jobs:
   periodic_health_check:    
