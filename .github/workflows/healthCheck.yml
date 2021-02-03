@@ -1,6 +1,9 @@
 name: Periodic health check
 
 on:
+  push:
+    branches:
+      - master
   
 jobs:
   periodic_health_check:    
